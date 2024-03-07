@@ -11,7 +11,7 @@ This project will be a backend for a hypothetical app that logs calls and user i
 
 ## Database Tables 
 
-The following tables will be initialized in your project's built-in database upon startup in _____(file name)__________.
+The following tables will be initialized in your project's built-in database upon startup, defined in _____(file name)__________.
 
 ### users
 ```
