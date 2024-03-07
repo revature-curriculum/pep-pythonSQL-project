@@ -46,7 +46,7 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 
 - LOAD csv data into DB tables, cleaning up any junk data (just delete it? or edit it).
 - SAVE analytic data for users into csv files.
-- SAVE call logs into csv files, ordered by (name?...), then start time, excluding any junk data. 
+- SAVE call logs into csv files, ordered by (name?... userId?), then start time, excluding any junk data. 
 
 
 
