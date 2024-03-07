@@ -26,7 +26,7 @@ callId INTEGER PRIMARY KEY,
 phoneNumber TEXT,
 startTimeEpoch INTEGER,
 endTimeEpoch INTEGER,
-direction TEXT,
+callDirection TEXT,
 userId INTEGER,
 FOREIGN KEY (userId) REFERENCES users(userId)
 ```
