@@ -2,16 +2,14 @@
 
 ## Background 
 
--bit about python sql
--bit about file i/o
+There are two halves in a full-stack applications: the front end, responsible for user interaction and display, and the backend, handling data storage and processing.
 
-This project will be a backend for a hypothetical app that logs calls and user information for a call center. ______(more info here)___.
+In this project, we'll work on the backend, crafting an application to manage data in a hypothetical call center. Our application will handle user accounts and calls, providing analytics and data ordering functionality.
 
--Bit about the actual tasks involved in the project
 
 ## Database Tables 
 
-The following tables will be initialized in your project's built-in database upon startup, defined in _____(file name)__________.
+The following tables will be initialized in your project's built-in database upon startup.
 
 ### users
 ```
@@ -35,10 +33,15 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 
 # Technical Requirements
 
-## Something about needing to use sqlite3 and csv libraries
+### SQLite
 
-- The app will already be a Python project with SQLite tables created at runtime. The callLogs.csv and users.csv files will be included in the resources folder for loading into the DB tables.
+- The app will already be a Python project with SQLite tables created at runtime. 
+- You will be responsible for inserting and selecting data from the built-in SQLite database. 
 
+### CSV
+
+- The callLogs.csv and users.csv files will be included in the resources folder for loading into the DB tables.
+- You will be responsible for loading the data from these existing files into the database, as well as writing data to new files.
 
 # User Stories
 

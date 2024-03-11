@@ -43,7 +43,7 @@ def main():
     conn.close()
 
 
-# TODO: Implement the following functions. The functions must pass the unit tests to complete the project.
+# TODO: Implement the following 4 functions. The functions must pass the unit tests to complete the project.
 
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
