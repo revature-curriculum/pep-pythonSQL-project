@@ -30,8 +30,8 @@ def main():
     )''')
 
     # You will implement these methods below. They just print TO-DO messages for now.
-    load_and_clean_users()
-    load_and_clean_call_logs()
+    load_and_clean_users('../resources/users.csv')
+    load_and_clean_call_logs('../resources/callLogs.csv')
     write_user_analytics()
     write_ordered_calls()
 
@@ -47,13 +47,13 @@ def main():
 
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
-def load_and_clean_users():
+def load_and_clean_users(file_path):
 
     print("TODO: load_users")
 
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
-def load_and_clean_call_logs():
+def load_and_clean_call_logs(file_path):
 
     print("TODO: load_call_logs")
 
@@ -72,6 +72,8 @@ def write_ordered_calls():
 
     print("TODO: write_ordered_calls")
 
+
+# No need to touch the functions below!------------------------------------------
 
 # This function is for debugs/validation - uncomment the function invocation in main() to see the data in the database.
 def select_from_users_and_call_logs():
@@ -94,6 +96,10 @@ def select_from_users_and_call_logs():
     cursor.execute('''SELECT * FROM callLogs''')
     for row in cursor:
         print(row)
+
+
+def return_cursor():
+    return cursor
 
 
 if __name__ == '__main__':
