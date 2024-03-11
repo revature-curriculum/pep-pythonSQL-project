@@ -76,8 +76,8 @@ class ProjectTests(unittest.TestCase):
             for column in result:
                 self.assertIsNotNone(column)
 
-    @staticmethod
-    def test_user_analytics_are_correct():
+
+    def test_user_analytics_are_correct(self):
 
         # List that will hold the contents of userAnalytics.csv
         user_analytics = []
@@ -92,7 +92,17 @@ class ProjectTests(unittest.TestCase):
             for line in file:
                 user_analytics.append(line.strip().split(','))
 
-        # TODO: the rest of this... correct averages and counts
+        # ensure that the record with userId 1 has an avgDuration of 105 and a count of 4
+        self.assertEqual(105.0, float(user_analytics[0][1]))
+        self.assertEqual(4, int(user_analytics[0][2]))
+
+        # ensure that the record with userId 2 has an avgDuration of 40 and a count of 5
+        self.assertEqual(40.0, float(user_analytics[1][1]))
+        self.assertEqual(5, int(user_analytics[1][2]))
+
+        # ensure that the record with userId 5 has an avgDuration of 70 and a count of 1
+        self.assertEqual(70.0, float(user_analytics[4][1]))
+        self.assertEqual(1, int(user_analytics[4][2]))
 
     def test_call_logs_are_ordered(self):
 
