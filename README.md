@@ -2,10 +2,9 @@
 
 ## Background 
 
-There are two halves in a full-stack applications: the front end, responsible for user interaction and display, and the backend, handling data storage and processing.
+There are two halves in a full-stack application: the front end, responsible for user interaction and display, and the backend, handling data storage and processing. In this project, we'll work on the backend, creating an application to manage data in a hypothetical call center. Our application will handle user accounts and calls, and provide analytics and data ordering functionality.
 
-In this project, we'll work on the backend, crafting an application to manage data in a hypothetical call center. Our application will handle user accounts and calls, providing analytics and data ordering functionality.
-
+The primary technologies to leverage in this project are Python, SQL, and File I/O with .csv files. Data will be loaded into a built-in SQLite database from existing .csv files, and analytic data will be saved into new .csv files. 
 
 ## Database Tables 
 
