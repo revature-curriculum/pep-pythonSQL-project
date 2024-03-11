@@ -30,8 +30,8 @@ def main():
     )''')
 
     # You will implement these methods below. They just print TO-DO messages for now.
-    load_and_clean_users()
-    load_and_clean_call_logs()
+    load_and_clean_users('../resources/users.csv')
+    load_and_clean_call_logs('../resources/callLogs.csv')
     write_user_analytics()
     write_ordered_calls()
 
@@ -47,11 +47,8 @@ def main():
 
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
-def load_and_clean_users():
+def load_and_clean_users(file_path):
     print("TODO: load_users")
-
-    # print out the contents of users.csv from the resources directory
-    file_path = '../resources/users.csv'
 
     # Open the file and read its contents
     with open(file_path, 'r') as file:
@@ -78,12 +75,9 @@ def load_and_clean_users():
 
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
-def load_and_clean_call_logs():
+def load_and_clean_call_logs(file_path):
 
     print("TODO: load_call_logs")
-
-    # print out the contents of callLogs.csv from the resources directory
-    file_path = '../resources/callLogs.csv'
 
     # Open the file and read its contents
     with open(file_path, 'r') as file:
@@ -123,13 +117,13 @@ def write_user_analytics():
 
     # Calculate total call duration and number of calls for each user ID
     for log in call_logs:
-        user_id = log[5]  # Assuming the user ID is at index 4
-        duration = log[3] - log[2]  # Assuming index 2 and 3 represent start and end times
-        if user_id not in total_duration:
+        user_id = log[5]  # Assuming the user ID is at index 5
+        duration = log[3] - log[2]  # Assuming index 2 and 3 represent start and end times (epoch time)
+        if user_id not in total_duration:  # add user id to dictionary if it doesn't exist
             total_duration[user_id] = 0
             num_calls[user_id] = 0
-        total_duration[user_id] += duration
-        num_calls[user_id] += 1
+        total_duration[user_id] += duration  # update total duration
+        num_calls[user_id] += 1  # update number of calls
 
     # Calculate average call duration for each user ID
     average_times = []
@@ -174,6 +168,8 @@ def write_ordered_calls():
                              'endTime': log[3], 'direction': log[4], 'userId': log[5]})
 
 
+# No need to touch the functions below!------------------------------------------
+
 # This function is for debugs/validation - uncomment the function invocation in main() to see the data in the database.
 def select_from_users_and_call_logs():
 
@@ -195,6 +191,10 @@ def select_from_users_and_call_logs():
     cursor.execute('''SELECT * FROM callLogs''')
     for row in cursor:
         print(row)
+
+
+def return_cursor():
+    return cursor
 
 
 if __name__ == '__main__':
