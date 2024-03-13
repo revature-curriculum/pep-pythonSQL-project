@@ -57,10 +57,10 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 ### Save user analytic data into userAnalytics.csv
 - Save analytic data for users into a csv file. The file must be named userAnalytics.csv, and it must be in the /resources folder
 - Records must include userId, avgDuration, numCalls. Example:
-  '''
+  ```
   userId,avgDuration,numCalls
-  1,105.0,5
-  '''
+  1,105.0,4
+  ```
 - HINT: This data will be selected from the callLogs table.
 - HINT 2: 
 
