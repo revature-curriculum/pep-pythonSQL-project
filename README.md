@@ -47,24 +47,27 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 (in progress, needs detail)
 
 ### Load user data into users table
-- read users.csv
-- clean the data
-- insert into DB
+- Load the users.csv file found in /resources into the users table
+- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
 
 ### Load call data into callLogs table
-- read callLogs.csv
-- clean the data
-- insert into DB
+- Load the callLogs.csv file found in /resources into the callLogs table 
+- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
 
 ### Save user analytic data into userAnalytics.csv
-- save analytic data for users into csv files. The file must be named userAnalytics.csv
-- {details about the following bullet}
-- records must include userId, avgDuration, numCalls
-- HINT:
+- Save analytic data for users into a csv file. The file must be named userAnalytics.csv, and it must be in the /resources folder
+- Records must include userId, avgDuration, numCalls. Example:
+  '''
+  userId,avgDuration,numCalls
+  1,105.0,5
+  '''
+- HINT: This data will be selected from the callLogs table.
+- HINT 2: 
 
 ### Save ordered call logs into orderedCallLogs.csv
 - Save call logs into csv files, ordered by userId, then start time. The file must be named orderedCallLogs.csv
-- HINT: order by
+- HINT: This data will be selected from the callLogs table.
+- HINT 2: You can make use of ORDER BY to greatly simplify your python logic
 
 
 
