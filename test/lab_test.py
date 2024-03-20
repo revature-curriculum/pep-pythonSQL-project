@@ -1,4 +1,5 @@
 import sqlite3
+import csv
 import unittest
 
 from src.main import load_and_clean_users, return_cursor, load_and_clean_call_logs
