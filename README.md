@@ -2,9 +2,9 @@
 
 ## Background 
 
-There are two halves in a full-stack application: the front end, responsible for user interaction and display, and the backend, handling data storage and processing. In this project, we'll work on the backend, creating an application to manage data in a hypothetical call center. Our application will handle user accounts and calls, and provide analytics and data ordering functionality.
+There are two halves in a full-stack application: the front end, responsible for user interaction and display, and the backend, which handles data storage and processing. In this project, we'll work on the backend, creating an application to manage data in a hypothetical call center. Our application will handle data for users and calls, and it will use that data to provide analytics and data ordering functionality.
 
-The primary technologies to leverage in this project are Python, SQL, and File I/O with .csv files. Data will be loaded into a built-in SQLite database from existing .csv files, and analytic data will be saved into new .csv files. 
+The primary technologies you will leverage in this project are Python, SQL, and File I/O with .csv files. The project will be written in Python. Data will be loaded into an in-memory SQLite database from existing .csv files, and analytic data will be saved into new .csv files. 
 
 ## Database Tables 
 
@@ -35,20 +35,38 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 ### SQLite
 
 - The app will already be a Python project with SQLite tables created at runtime. 
-- You will be responsible for inserting and selecting data from the built-in SQLite database. 
+- You will be responsible for cleaning and inserting data into the database, as well as selecting and modifying that data for analysis.  
 
 ### CSV
 
 - The callLogs.csv and users.csv files will be included in the resources folder for loading into the DB tables.
-- You will be responsible for loading the data from these existing files into the database, as well as writing data to new files.
+- You will be responsible for loading the data from these existing files into the database, as well as writing analytic data to new files.
 
 # User Stories
 
-(to be organized/fleshed out into actual subsections)
 
-- LOAD csv data into DB tables, cleaning up any junk data (just delete it? or edit it).
-- SAVE analytic data for users into csv files. userAnalytics.csv
-- SAVE call logs into csv files, ordered by (name?... userId?), then start time, excluding any junk data. orderedCallLogs.csv
+### Load user data into users table
+- Load the users.csv file found in /resources into the users table
+- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+
+### Load call data into callLogs table
+- Load the callLogs.csv file found in /resources into the callLogs table 
+- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+
+### Save user analytic data into userAnalytics.csv
+- Save analytic data for users into a csv file. The file must be named userAnalytics.csv, and it must be in the /resources folder
+- Records must include userId, avgDuration, numCalls. Example:
+  ```
+  userId,avgDuration,numCalls
+  1,105.0,4
+  ```
+- HINT: This data will be selected from the callLogs table.
+- HINT 2: Dictionaries will be very helpful for matching data with userIds. Consider one for average call duration and one for number of calls. 
+
+### Save ordered call logs into orderedCallLogs.csv
+- Save call logs into csv files, ordered by userId, then start time. The file must be named orderedCallLogs.csv
+- HINT: This data will be selected from the callLogs table.
+- HINT 2: You can make use of ORDER BY to greatly simplify your python logic
 
 
 
