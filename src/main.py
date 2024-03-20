@@ -30,24 +30,25 @@ def main():
     )''')
 
     # You will implement these methods below. They just print TO-DO messages for now.
-    load_and_clean_users('../resources/users.csv')
-    load_and_clean_call_logs('../resources/callLogs.csv')
-    write_user_analytics()
-    write_ordered_calls()
+    load_and_clean_users('../../resources/users.csv')
+    load_and_clean_call_logs('../../resources/callLogs.csv')
+    write_user_analytics('../../resources/userAnalytics.csv')
+    write_ordered_calls('../../resources/orderedCalls.csv')
 
-    # Helper method that prints the contents of the users and callLogs tables
-    select_from_users_and_call_logs()
+    # Helper method that prints the contents of the users and callLogs tables. Uncomment to see data.
+    # select_from_users_and_call_logs()
 
     # Close the cursor and connection. main function ends here.
     cursor.close()
     conn.close()
 
 
-# TODO: Implement the following functions. The functions must pass the unit tests to complete the project.
+# TODO: Implement the following 4 functions. The functions must pass the unit tests to complete the project.
 
 
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
+
     print("TODO: load_users")
 
     # Open the file and read its contents
@@ -101,10 +102,11 @@ def load_and_clean_call_logs(file_path):
                 cursor.execute('''INSERT INTO callLogs (phoneNumber, startTime, endTime, direction, userId)
                                   VALUES (?, ?, ?, ?, ?)''', fields)
 
-
 # This function will write analytics data to userAnalytics.csv - average call time, and number of calls per user.
 # You must save records consisting of each userId, avgDuration, and numCalls
-def write_user_analytics():
+# example: 1,105.0,4 - where 1 is the userId, 105.0 is the avgDuration, and 4 is the numCalls.
+def write_user_analytics(csv_file_path):
+
     print("TODO: write_user_analytics")
 
     # Get all callLogs from the callLogs table
@@ -131,10 +133,7 @@ def write_user_analytics():
         average_duration = total_duration[user_id] / num_calls[user_id]
         average_times.append((user_id, average_duration, num_calls[user_id]))
 
-    # Define the file path
-    csv_file_path = '../resources/userAnalytics.csv'
-
-    # Write the results to a CSV file
+    # Write the results to a CSV file, path given by the csv_file_path parameter
     with open(csv_file_path, 'w', newline='') as csvfile:
         fieldnames = ['userId', 'avgDuration', 'numCalls']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -146,7 +145,7 @@ def write_user_analytics():
 
 # This function will write the callLogs ordered by userId, then start time.
 # Then, write the ordered callLogs to orderedCalls.csv
-def write_ordered_calls():
+def write_ordered_calls(csv_file_path):
 
     print("TODO: write_ordered_calls")
 
@@ -154,10 +153,7 @@ def write_ordered_calls():
     cursor.execute('''SELECT * FROM callLogs ORDER BY userId, startTime''')
     call_logs = cursor.fetchall()
 
-    # Define the file path
-    csv_file_path = '../resources/orderedCalls.csv'
-
-    # Write the results to a CSV file
+    # Write the results to a CSV file, path given by the csv_file_path parameter
     with open(csv_file_path, 'w', newline='') as csvfile:
         fieldnames = ['callId', 'phoneNumber', 'startTime', 'endTime', 'direction', 'userId']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
