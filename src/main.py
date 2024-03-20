@@ -26,7 +26,7 @@ def main():
         endTime INTEGER,
         direction TEXT,
         userId INTEGER,
-        FOREIGN KEY (userId) REFERENCES users(id)
+        FOREIGN KEY (userId) REFERENCES users(userId)
     )''')
 
     # You will implement these methods below. They just print TO-DO messages for now.
