@@ -58,7 +58,7 @@ def load_and_clean_call_logs(file_path):
     print("TODO: load_call_logs")
 
 
-# This function will write analytics data to userAnalytics.csv - average call time, and number of calls per user.
+# This function will write analytics data to testUserAnalytics.csv - average call time, and number of calls per user.
 # You must save records consisting of each userId, avgDuration, and numCalls
 # example: 1,105.0,4 - where 1 is the userId, 105.0 is the avgDuration, and 4 is the numCalls.
 def write_user_analytics(csv_file_path):

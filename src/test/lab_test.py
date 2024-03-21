@@ -92,23 +92,23 @@ class ProjectTests(unittest.TestCase):
             for column in result:
                 self.assertIsNotNone(column)
 
-    # This test will test analytics data to userAnalytics.csv - average call time, and number of calls per user.
+    # This test will test analytics data to testUserAnalytics.csv - average call time, and number of calls per user.
     def test_user_analytics_are_correct(self):
         dir=os.path.dirname(os.path.abspath(__file__))
 
         # get absolute path of testCallLogs.csv
         test_call_logs_csv_path = os.path.join(dir, 'testCallLogs.csv')
 
-        # get absolute path of userAnalytics.csv
-        user_analytics_file_path=os.path.join(dir,'userAnalytics.csv')
+        # get absolute path of testUserAnalytics.csv
+        user_analytics_file_path=os.path.join(dir,'testUserAnalytics.csv')
 
-        # List that will hold the contents of userAnalytics.csv
+        # List that will hold the contents of testUserAnalytics.csv
         user_analytics = []
 
         load_and_clean_call_logs(test_call_logs_csv_path)
         write_user_analytics(user_analytics_file_path)
 
-        # Get the data from userAnalytics.csv
+        # Get the data from testUserAnalytics.csv
         with open(user_analytics_file_path, 'r') as file:
 
             # Skip the first line
