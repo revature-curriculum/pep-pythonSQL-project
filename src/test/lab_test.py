@@ -135,18 +135,21 @@ class ProjectTests(unittest.TestCase):
         # Get the directory of the current test file
         test_dir = os.path.dirname(os.path.abspath(__file__))
 
-        # Construct the path to testCallLogs.csv
+        # get absolute path to testCallLogs.csv
         test_call_logs_path = os.path.join(test_dir, 'testCallLogs.csv')
+
+        # Get absolute path to testOrderedCalls.csv
+        test_ordered_calls_path = os.path.join(test_dir, 'testOrderedCalls.csv')
 
         # Load and clean call logs from testCallLogs.csv
         load_and_clean_call_logs(test_call_logs_path)
 
         #load_and_clean_call_logs("testCallLogs.csv")
-        write_ordered_calls("testOrderedCalls.csv")
+        write_ordered_calls(test_ordered_calls_path)
         # List that will hold the contents of orderedCalls.csv
         ordered_calls = []
         #Get the data from orderedCalls.csv
-        with open("testOrderedCalls.csv", 'r') as file:
+        with open(test_ordered_calls_path, 'r') as file:
             # Skip the first line
             next(file)
             # Read the contents of the file line by line, saving them to ordered_calls
