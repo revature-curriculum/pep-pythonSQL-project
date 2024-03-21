@@ -48,10 +48,12 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 ### Load user data into users table
 - Load the users.csv file found in /resources into the users table
 - Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+- HINT: For every record in users.csv, make sure it has the correct number of fields and no empty values before inserting into the Database.
 
 ### Load call data into callLogs table
 - Load the callLogs.csv file found in /resources into the callLogs table 
 - Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+- HINT: For every record in callLogs.csv, make sure it has the correct number of fields and no empty values before inserting into the Database.
 
 ### Save user analytic data into userAnalytics.csv
 - Save analytic data for users into a csv file. The file must be named userAnalytics.csv, and it must be in the /resources folder
