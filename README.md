@@ -61,7 +61,7 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
   1,105.0,4
   ```
 - HINT: This data will be selected from the callLogs table.
-- HINT 2: Dictionaries will be very helpful for matching data with userIds. Consider one for average call duration and one for number of calls. 
+- HINT 2: Dictionaries will be very helpful for matching data with userIds. Consider one for {userId, average call duration} and one for {userId, number of calls}. 
 
 ### Save ordered call logs into orderedCallLogs.csv
 - Save call logs into csv files, ordered by userId, then start time. The file must be named orderedCallLogs.csv
