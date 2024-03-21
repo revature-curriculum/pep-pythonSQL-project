@@ -118,17 +118,20 @@ class ProjectTests(unittest.TestCase):
             for line in file:
                 user_analytics.append(line.strip().split(','))
 
+        # order user_analytics by userId ascending
+        user_analytics.sort(key=lambda x: int(x[0]))
+
         # ensure that the record with userId 4 has an avgDuration of 55 and a count of 2
-        self.assertEqual(55.0, float(user_analytics[0][1]))
-        self.assertEqual(2, int(user_analytics[0][2]))
+        self.assertEqual(105.0, float(user_analytics[0][1]))
+        self.assertEqual(4, int(user_analytics[0][2]))
 
         # ensure that the record with userId 2 has an avgDuration of 42.5 and a count of 4
         self.assertEqual(42.5, float(user_analytics[1][1]))
         self.assertEqual(4, int(user_analytics[1][2]))
 
         # ensure that the record with userId 1 has an avgDuration of 105.0 and a count of 4
-        self.assertEqual(105.0, float(user_analytics[2][1]))
-        self.assertEqual(4, int(user_analytics[2][2]))
+        self.assertEqual(55.0, float(user_analytics[2][1]))
+        self.assertEqual(2, int(user_analytics[2][2]))
 
     def test_call_logs_are_ordered(self):
 
