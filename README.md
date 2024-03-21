@@ -68,5 +68,5 @@ Note - by specifying IDs as primary keys, the id value should auto-increment for
 - HINT: This data will be selected from the callLogs table.
 - HINT 2: You can make use of ORDER BY to greatly simplify your python logic
 
-
+*General note - each of these functions take a "file_path" parameter. You will not need to edit this variable, but it will be used to accomplish each implementation. See main() for an example of the function invocations with file paths from /resources.
 
